@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    background: #06060d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-wrap {
+    position: relative;
+    width: 380px;
+    height: 560px;
+}
+
+.energy-border {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    filter:
+        drop-shadow(0 0 8px #ff7b2c),
+        drop-shadow(0 0 20px #ff7b2c),
+        drop-shadow(0 0 40px #ff5e00);
+}
+
+.energy-border rect {
+    fill: none;
+    stroke: #ff8f45;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 60 1200;
+    animation: travel 2s linear infinite;
+}
+
+.energy-border rect:nth-child(2) {
+    stroke: #fff;
+    stroke-width: 2;
+    filter: blur(2px);
+    animation: travel 1.3s linear infinite;
+}
+
+.card {
+    position: absolute;
+    inset: 12px;
+    background: rgba(20, 15, 25, 0.95);
+    border-radius: 28px;
+    color: #fff;
+    padding: 35px;
+    box-sizing: border-box;
+}
+
+.plan {
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 72px;
+    font-weight: bold;
+}
+
+.month {
+    font-size: 22px;
+    color: #ccc;
+}
+
+.desc {
+    margin: 20px 0;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    margin: 15px 0;
+}
+
+button {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 999px;
+    background: #fff;
+    font-weight: 700;
+    margin-top: 25px;
+}
+
+@keyframes travel {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: 1260;
+    }
+}
